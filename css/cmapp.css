@@ -1,0 +1,159 @@
+html, body {
+    background-image: url(images/black_stripes_bg.jpg);
+    color: #3d3644;
+    height: 100%;
+    overflow: hidden;
+}
+
+#app {
+    position: absolute;
+    border-radius: 10px;
+    width: 1000px;
+    margin-left: -500px;
+    height: 800px;
+    border: 1px solid #231d2b;
+    background: #3d3644;
+    left: 50%;
+    font-family: verdana;
+    font-size: 10px;
+}
+
+#head {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 50px;
+    background: #dcd9de url(images/ui-bg_highlight.png) 50% top repeat-x;
+    font-size: 20px;
+    letter-spacing: 5px;
+    padding: 10px;
+    text-align: right;
+}
+
+#tab-bar {
+    height: 15px;
+    padding-top: 15px;
+    padding-left: 5px;
+    border: none;
+    background: transparent url(images/ui-bg_highlight-tabbar.png) repeat-x;
+}
+
+#content {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 680px;
+    background: #dcd9de;
+    padding: 10px;
+}
+
+.tab {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    letter-spacing: 5px;
+    color: #dcd9de;
+    font-weight: bold;
+    border: 1px solid #dcd9de;
+    padding: 3px 15px 3px 15px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.tab:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.active-tab {
+    color: #3d3644;
+    background: #dcd9de;
+}
+
+.page {
+    height: 100%;
+}
+
+.hidden_page {
+    display: none;
+}
+
+.panel-cnt {
+    border-radius: 5px;
+    border: 1px solid #3d3644;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.panel-cnt-wh {
+    border-radius: 5px;
+    border: 1px solid #3d3644;
+    margin-bottom: 10px;
+}
+
+.panel-header {
+    background: #3d3644 url(images/ui-bg_panelheader.png) repeat-x;
+    color: #dcd9de;
+    height: 13px;
+    padding: 5px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.panel-footer {
+    background: #3d3644;
+    color: #dcd9de;
+    height: 13px;
+    padding: 5px;
+}
+
+input[type=text] {
+    border: 1px solid #3d3644;
+    border-radius: 5px;
+    padding: 2px;
+    font-family: verdana;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+input[readonly=readonly],textarea[readonly=readonly] {
+    border: 1px solid #3d3644;
+    border-radius: 5px;
+    padding: 2px;
+    font-family: verdana;
+    font-size: 10px;
+    margin-left: 10px;
+    background: #dcd9de;
+}
+
+.grid-cnt {
+    background: white;
+    overflow: auto;
+}
+
+.grid-row:hover {
+    background: #dcd9de;
+    cursor: pointer;
+}
+
+.detail-row {
+    padding: 10px;
+    height: 10px;
+}
+
+.detail-field {
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.label {
+    float: left;
+    display: table-cell;
+    width: 100px;
+    padding-top: 3px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+th {
+    border-bottom: 1px solid #dcd9de;
+}
