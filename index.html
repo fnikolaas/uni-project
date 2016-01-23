@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Test classicModels - example application</title>
+        
+        <link rel="stylesheet" type="text/css" href="css/cmapp.css">
+        
+        <script src="js/jsbase/util.js" type="text/javascript"></script>
+        <script src="js/jsbase/grid.js" type="text/javascript"></script>
+        <script src="js/jsbase/baseController.js" type="text/javascript"></script>
+        <script src="js/app/controller/cmapp.js" type="text/javascript"></script>
+        
+    </head>
+    <body onload="new CmApp;">
+        <div id="app">
+            <div id="head">
+                classicModels
+                <div style="font-size: 10px; margin-top: 5px;">
+                    ajax driven example application
+                </div>
+            </div>
+            <div id="tab-bar">
+                <span id="tab_1" class="tab active-tab">
+                    products
+                </span>
+                <span id="tab_2" class="tab">
+                    customers
+                </span>
+            </div>
+            <div id="content">
+                
+                <!-- page 1 -->
+                
+                <div id="tab_1_page" class="page">
+                    <div id="search_panel" class="panel-cnt">
+                        Search
+                        <input type="text" id="t_search"/>
+                        <input type="button" id="b_search" value="Go"/>
+                    </div>
+                    <div>
+                        <div id="result_panel" class="panel-cnt-wh" 
+                             style="float: left; width: 500px; height: 620px;">
+                            <div class="panel-header">
+                                productlist
+                            </div>
+                            <div id="result-grid-cnt" class="grid-cnt" style="height: 574px;">
+                            </div>
+                            <div id ="count" class="panel-footer">
+                            </div>
+                        </div>
+                        <div id="detail_panel" class="panel-cnt-wh" 
+                             style="float: right; width: 465px; height: 620px;">
+                            <div class="panel-header">
+                                productdetails
+                            </div>
+                            <div>
+                                <div class="detail-row">
+                                    <div class="label bold">
+                                        Name
+                                    </div>
+                                    <div>
+                                        <input type="text" id="productName" readonly="readonly" class="detail-field bold"/>
+                                    </div>
+                                </div>
+                                <div class="detail-row">
+                                    <div class="label">
+                                        Product Line
+                                    </div>
+                                    <div>
+                                        <input type="text" id="productLine" class="detail-field" readonly="readonly"/>
+                                    </div>
+                                </div>
+                                <div class="detail-row">
+                                    <div class="label">
+                                        Product Scale
+                                    </div>
+                                    <div>
+                                        <input type="text" id="productScale" class="detail-field" readonly="readonly"/>
+                                    </div>
+                                </div>
+                                <div class="detail-row">
+                                    <div class="label">
+                                        Product Code
+                                    </div>
+                                    <div>
+                                        <input type="text" id="productCode" class="detail-field" readonly="readonly"/>
+                                    </div>
+                                </div>
+                                <div class="detail-row">
+                                    <div class="label">
+                                        Vendor
+                                    </div>
+                                    <div>
+                                        <input type="text" id="productVendor" class="detail-field" readonly="readonly"/>
+                                    </div>
+                                </div>
+                                <div class="detail-row">
+                                    <div class="label">
+                                        Description
+                                    </div>
+                                    <div>
+                                        <textarea rows="10" cols="50" id="productDescription" class="detail-field" readonly="readonly">
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- page 2 -->
+                
+                <div id="tab_2_page" class="page hidden_page">
+                    page 2 should contain customer data
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
