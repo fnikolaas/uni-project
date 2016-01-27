@@ -5,6 +5,17 @@ html, body {
     overflow: hidden;
 }
 
+/* ---------- shopping cart ----------- */
+input#add_to_cart{
+    padding:2.5rem 1rem 2.5rem 1rem;
+    border-radius:0.8rem;
+}
+
+#shopping-cart-grid-cnt .grid-row {
+  height:2rem;
+}
+/* ------------------------------------ */
+
 #app {
     position: absolute;
     border-radius: 10px;
