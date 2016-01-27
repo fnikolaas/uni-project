@@ -69,4 +69,12 @@ ShoppingCart.prototype.removeItem = function(productCode)
 	return false;
 }
 
+ShoppingCart.prototype.calculateShoppingCartWholeCosts = function(){
+	var costs = 0;
+	for (var i = 0, l = this.items.length; i <l; i++){
+		costs += (this.items[i].buyPrice * this.items[i].count);
+	}
+	return costs;
+}
+
 var sc = new ShoppingCart;
