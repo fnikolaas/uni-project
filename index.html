@@ -5,14 +5,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Test classicModels - example application</title>
-        
+
         <link rel="stylesheet" type="text/css" href="css/cmapp.css">
-        
+
         <script src="js/jsbase/util.js" type="text/javascript"></script>
         <script src="js/jsbase/grid.js" type="text/javascript"></script>
         <script src="js/jsbase/baseController.js" type="text/javascript"></script>
         <script src="js/app/controller/cmapp.js" type="text/javascript"></script>
-        
+
     </head>
     <body onload="new CmApp;">
         <div id="app">
@@ -29,11 +29,14 @@
                 <span id="tab_2" class="tab">
                     customers
                 </span>
+                <span id="tab_3" class="tab">
+                    shopping cart
+                </span>
             </div>
             <div id="content">
-                
+
                 <!-- page 1 -->
-                
+
                 <div id="tab_1_page" class="page">
                     <div id="search_panel" class="panel-cnt">
                         Search
@@ -41,7 +44,7 @@
                         <input type="button" id="b_search" value="Go"/>
                     </div>
                     <div>
-                        <div id="result_panel" class="panel-cnt-wh" 
+                        <div id="result_panel" class="panel-cnt-wh"
                              style="float: left; width: 500px; height: 620px;">
                             <div class="panel-header">
                                 productlist
@@ -51,7 +54,7 @@
                             <div id ="count" class="panel-footer">
                             </div>
                         </div>
-                        <div id="detail_panel" class="panel-cnt-wh" 
+                        <div id="detail_panel" class="panel-cnt-wh"
                              style="float: right; width: 465px; height: 620px;">
                             <div class="panel-header">
                                 productdetails
@@ -110,12 +113,25 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- page 2 -->
-                
+
                 <div id="tab_2_page" class="page hidden_page">
                     page 2 should contain customer data
                 </div>
+
+                <!-- page 3 -->
+                <div id="tab_3_page" class="page hidden_page">
+                        <div id="shopping_cart_panel" class="panel-cnt-wh" style="float: left; width: 500px; height: 620px;">
+                            <div class="panel-header">
+                                shopping cart
+                            </div>
+                            <div id="shopping-cart-grid-cnt" class="grid-cnt" style="height: 574px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </body>
