@@ -1,25 +1,25 @@
 <?php
 /*
 * Die Customerklasse beinhaltet alle Kundendatenspezifischen Operationen,
-* die in der App durchgeführt werden.
+* die in der App durchgefuehrt werden.
 * @author Martin Lux
 *
 */
 
 
 class Customer {
-    
+
 	//Konstruktor
     function Customer($db, $params) {
         $this->db = $db;
         $this->params = $params;
     }
-    
-	//Methode zum Einfügen von Kundenstammdaten in die Datenbank
+
+	//Methode zum Einfuegen von Kundenstammdaten in die Datenbank
 	public function setCustomer() {
 		//Umwandlung der Kundennummer in Int
 		$customerNumber = intval ( this->params['customerNumber'], $base = 10 ] );
-	
+
 		//Bau der Query
 		$query = array(
 			'insert into customers values (',
@@ -40,19 +40,18 @@ class Customer {
 			this->params['password'] ');' ,
 			'commit;'
 		);
-		//Ausführung der Query
+		//Ausfuehrung der Query
 		$ret = $this->db->executeQuery(implode('', $query));
-		
-		//Rückgabe von True oder False
+
+		//Rueckgabe von True oder False
 		return $ret;
 	}
-	
+
 	//Methode zum Updaten der Kundenstammdaten in der Datenbank
 	public function updateCustomer() {
 		//Umwandlung der Kundennummer in Int
 		$customerNumber = intval ( this->params['customerNumber'], $base = 10 ] );
-		
-		//Bau der Query
+
 		$query = array(
 			'update customers set',
 			'customerName = ' this->params['customerName'] ',',
@@ -69,51 +68,51 @@ class Customer {
 			'where customerNumber = ' $customerNumber ';'
 			'commit;'
 			);
-			
-		//Ausführung der Query
+
+		//Ausfuehrung der Query
 		$ret = $this->db->executeQuery(implode('', $query));
-		
-		//Rückgabe von True oder False
+
+		//Rueckgabe von True oder False
 		return $ret;
-	}	
-	
-	
+	}
+
+
 	//Methode zum Abruf der Kundenstammdaten aus der Datenbank mittels Kundennummer
 	public function getCustomer() {
 		//Umwandlung der Kundennummer in Int
 		$customerNumber = intval ( this->params['customerNumber'], $base = 10 ] );
-		
+
 		//Bau der Query
 		$query = array(
 			'select * from customer ',
 			'where customerNumber = ' $customerNumber,
 			';'
 			);
-			
-		//Ausführung der Query
+
+		//Ausfuehrung der Query
 		$ret = $this->db->executeQuery(implode('', $query));
-		
-		//Rückgabe von True oder False
+
+		//Rueckgabe von True oder False
 		return $ret;
-	}	
-	
+	}
+
 	//Methode zum Abruf des Passworts mittels Kundennummer aus der Datenbank
 	public function getCustomerPassword() {
 		//Umwandlung der Kundennummer in Int
 		$customerNumber = intval ( this->params['customerNumber'], $base = 10 ] );
-		
+
 		//Bau der Query
 		$query = array(
 			'select password from customer ',
 			'where customerNumber = ' $customerNumber,
 			';'
 			);
-			
-		//Ausführung der Query
+
+		//Ausfuehrung der Query
 		$ret = $this->db->executeQuery(implode('', $query));
-		
-		//Rückgabe von True oder False
+
+		//Rueckgabe von True oder False
 		return $ret;
 	}
-	
+
 }
