@@ -115,6 +115,14 @@ Util.prototype.displayShoppingCart = function(data)
   ];
 
   grid.create(colConfig, 'shopping-cart-grid-cnt', data);
+  this.showShoppingCartWholeCosts();
 }
+
+Util.prototype.showShoppingCartWholeCosts = function(data){
+  var costs = sc.calculateShoppingCartWholeCosts();
+  var field = document.getElementById("scWholeCosts");
+  field.value = costs.toFixed(2);
+}
+
 /* ----------------------------------------------- */
 var Util = new Util;
