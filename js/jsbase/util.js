@@ -113,5 +113,6 @@ Util.prototype.displayShoppingCart = function(data)
         })
       }
   ];
+}
 /* ----------------------------------------------- */
 var Util = new Util;
