@@ -113,6 +113,8 @@ Util.prototype.displayShoppingCart = function(data)
         })
       }
   ];
+
+  grid.create(colConfig, 'shopping-cart-grid-cnt', data);
 }
 /* ----------------------------------------------- */
 var Util = new Util;
