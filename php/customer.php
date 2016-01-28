@@ -18,7 +18,7 @@ class Customer {
 	//Methode zum Einfuegen von Kundenstammdaten in die Datenbank
 	public function setCustomer() {
 		//Umwandlung der Kundennummer in Int
-		$customerNumber = intval ( this->params['customerNumber'], $base = 10 ] );
+		$customerNumber = intval ( this->params['customerNumber'], $base = 10);
 
 		//Bau der Query
 		$query = array(
@@ -50,7 +50,7 @@ class Customer {
 	//Methode zum Updaten der Kundenstammdaten in der Datenbank
 	public function updateCustomer() {
 		//Umwandlung der Kundennummer in Int
-		$customerNumber = intval ( this->params['customerNumber'], $base = 10 ] );
+		$customerNumber = intval ( this->params['customerNumber'], $base = 10  );
 
 		$query = array(
 			'update customers set',
@@ -80,7 +80,7 @@ class Customer {
 	//Methode zum Abruf der Kundenstammdaten aus der Datenbank mittels Kundennummer
 	public function getCustomer() {
 		//Umwandlung der Kundennummer in Int
-		$customerNumber = intval ( this->params['customerNumber'], $base = 10 ] );
+		$customerNumber = intval ( this->params['customerNumber'], $base = 10  );
 
 		//Bau der Query
 		$query = array(
@@ -99,7 +99,7 @@ class Customer {
 	//Methode zum Abruf des Passworts mittels Kundennummer aus der Datenbank
 	public function getCustomerPassword() {
 		//Umwandlung der Kundennummer in Int
-		$customerNumber = intval ( this->params['customerNumber'], $base = 10 ] );
+		$customerNumber = intval ( this->params['customerNumber'], $base = 10  );
 
 		//Bau der Query
 		$query = array(
