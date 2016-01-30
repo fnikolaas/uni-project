@@ -1,6 +1,7 @@
 function CmApp() {
     this.initApp();
     this.searchProducts();
+    sc.initShoppingCart();
 }
 
 CmApp.prototype = new BaseController;

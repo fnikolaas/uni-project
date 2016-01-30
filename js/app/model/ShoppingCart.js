@@ -42,18 +42,29 @@ ShoppingCart.prototype.addItem = function(cb)
 {
 	var fields = Util.getFieldsContent();
 	var item = this.getItemById(fields.productCode);
-
+	var q;
 	if (typeof item[1] !== 'undefined') {
-		 item[1].count += 1;
-		 this.items[item[0]] = item[1];
-	 }
+		/*	Type Inferency - JS fuck	*/
+		if (fields.quantity == '' || fields.quantity === 'undefined') q = 1;
+		else q = fields.quantity;
+
+		if (!/[^0-9]/.test(q))
+		{
+			item[1].count += parseInt(q);
+			this.items[item[0]] = item[1];
+		}
+
+	}
 	else {
 		item = fields;
-		item['count'] = 1;
-		this.items.push(fields);
+		if (!/[^0-9]/.test(item.quantity) || (item.quantity == '') )
+		{
+			item['count'] = (item.quantity !== '') ? parseInt(item.quantity) : parseInt(1);
+			this.items.push(fields);
+		}
 	}
 	Util.displayShoppingCart(this.items);
-	//Cookie.appendItemToSessionCookie(productCode, sessionId);
+	cook.storeSC();
 }
 
 ShoppingCart.prototype.removeItem = function(productCode)
@@ -65,16 +76,23 @@ ShoppingCart.prototype.removeItem = function(productCode)
 			this.items.splice(i, 1);
 		}
 	}
-	//Cookie.removeItemFromSessionCookie(sessionId, itemId)
+	cook.storeSC();
 	return false;
 }
 
-ShoppingCart.prototype.calculateShoppingCartWholeCosts = function(){
+ShoppingCart.prototype.calculateShoppingCartWholeCosts = function()
+{
 	var costs = 0;
 	for (var i = 0, l = this.items.length; i <l; i++){
 		costs += (this.items[i].buyPrice * this.items[i].count);
 	}
 	return costs;
+}
+
+ShoppingCart.prototype.initShoppingCart = function()
+{
+	cook.restoreShoppingCart(this);
+	Util.displayShoppingCart(this.items);
 }
 
 var sc = new ShoppingCart;
