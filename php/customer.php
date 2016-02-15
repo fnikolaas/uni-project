@@ -114,6 +114,28 @@ class Customer {
 		//Rueckgabe von True oder False
 		return $ret;
 	}
+	
+	//Ermittlung des Gesamtumsatzes für alle Kunden
+	public function getAllCustomersRevenue() {
+
+		//Bau der Query
+		$query = array(
+			'select customers.customerName, sum(orderdetails.priceEach * orderdetails.quantityOrdered)',
+			'from customers',
+			'inner join orders',
+			'on customers.customerNumber=orders.customerNumber',
+			'inner join orderdetails',
+			'on orders.orderNumber=orderdetails.orderNumber',
+			'group by customers.customerName',
+			';'
+			);
+
+		//Ausführung der Query
+		$ret = $this->db->executeQuery(implode('', $query));
+		
+		//Rückgabe Result-Array
+		return $ret;
+	}
 
 }
 ?>
